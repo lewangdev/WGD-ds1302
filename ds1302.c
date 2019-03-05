@@ -201,7 +201,13 @@ int main (int argc, char *argv [])
   int clock [8] ;
 
   wiringPiSetup () ;
-  ds1302setup   (0, 1, 2) ;
+
+  /*
+   * GPIO0: CLK
+   * GPIO1: DATA
+   * GPIO4: RST
+   */
+  ds1302setup   (0, 1, 4) ;
 
   if (argc == 2)
   {
